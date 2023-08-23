@@ -10,11 +10,16 @@ jobs:
 
   deploy:
 
-    runs-on: self-hosted
-
+    runs-on: ubuntu-latest
+    
     steps:
-    - uses: actions/checkout@v3
-    - name: Deploy using Docker Compose
-      run: |
-        cd /home/elder/Code/elder/test-repository
-        docker-compose up -d
+    - name: deploy on docker using ssh
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd /home/elder/Code/elder/test-repository
+          docker-compose up -d
