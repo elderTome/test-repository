@@ -8,11 +8,13 @@ on:
 
 jobs:
 
-  build:
+  deploy:
 
     runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build .
+    - name: Deploy using Docker Compose
+      run: |
+        cd /home/elder/Code/elder/test-repository
+        docker-compose up -d
