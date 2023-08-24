@@ -16,7 +16,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body className={inter.className}>
+        <div className="bg-zinc-800 text-white p-3">
+          <h1>Header</h1>
+        </div>
+        {children}
+      </body>
     </html>
   )
 }
