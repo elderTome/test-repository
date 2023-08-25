@@ -1,25 +1,25 @@
-name: Docker Image CI
+# name: Docker Image CI
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
 
-jobs:
+# jobs:
 
-  deploy:
+#   deploy:
 
-    runs-on: self-hosted
+#     runs-on: self-hosted
     
-    steps:
-    - name: deploy on docker using ssh
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd /home/elder/Code/elder/test-repository
-          docker-compose up -d
+#     steps:
+#     - name: deploy on docker using ssh
+#       uses: appleboy/ssh-action@v1.0.0
+#       with:
+#         host: ${{ secrets.HOST }}
+#         username: ${{ secrets.USERNAME }}
+#         password: ${{ secrets.PASSWORD }}
+#         port: ${{ secrets.PORT }}
+#         script: |
+#           cd /home/elder/Code/elder/test-repository
+#           docker-compose up -d
