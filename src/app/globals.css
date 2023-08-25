@@ -2,6 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #DDD;
-}
+body { @apply bg-zinc-900 text-zinc-50 text-sm }
+
